@@ -1,0 +1,51 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(184, 184, 255);
+}
+
+h1 {
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    padding: 0.3em 0px 1em 0px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    background-color: rgb(124, 124, 255);
+    padding: 10px;
+}
+
+.imagem {
+    width: 45%; 
+    margin-right: 20px;
+}
+
+.texto {
+    flex: 1; 
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer {
+    text-align: center;
+    font-size: 1.5em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(124, 124, 255);
+}
+
+a:hover {
+    color: blue;
+    text-decoration: underline;
+}
