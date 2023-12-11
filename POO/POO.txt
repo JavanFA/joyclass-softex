@@ -1,0 +1,184 @@
+Livro:
+
+Atributos:
+titulo: Título do livro.
+autor: Nome do autor do livro.
+paginas: Número total de páginas do livro.
+
+Métodos:
+abrir(): Abre o livro.
+fechar(): Fecha o livro.
+ler(pagina): Retorna o conteúdo da página especificada.
+
+class Livro {
+  constructor(titulo, autor, paginas) {
+    this.titulo = titulo;
+    this.autor = autor;
+    this.paginas = paginas;
+    this.aberto = false;
+  }
+
+  abrir() {
+    this.aberto = true;
+    console.log(`Livro aberto: ${this.titulo} - ${this.autor}`);
+  }
+
+  fechar() {
+    this.aberto = false;
+    console.log(`Livro fechado: ${this.titulo} - ${this.autor}`);
+  }
+
+  ler(pagina) {
+    if (this.aberto && pagina <= this.paginas) {
+      console.log(`Lendo página ${pagina} de ${this.titulo}`);
+    } else {
+      console.log(`O livro está fechado ou a página não existe.`);
+    }
+  }
+}
+
+// Exemplo de uso
+
+const livro1 = new Livro("Dom Casmurro", "Machado de Assis", 300);
+livro1.abrir();
+livro1.ler(10);
+livro1.fechar();
+
+######
+
+Carro:
+
+Atributos:
+marca: Marca do carro.
+modelo: Modelo do carro.
+cor: Cor do carro.
+
+Métodos:
+ligar(): Liga o carro.
+desligar(): Desliga o carro.
+acelerar(velocidade): Acelera o carro para a velocidade especificada.
+
+class Carro {
+  constructor(marca, modelo, cor) {
+    this.marca = marca;
+    this.modelo = modelo;
+    this.cor = cor;
+    this.ligado = false;
+    this.velocidade = 0;
+  }
+
+  ligar() {
+    this.ligado = true;
+    console.log(`Carro ${this.marca} ${this.modelo} ligado.`);
+  }
+
+  desligar() {
+    this.ligado = false;
+    this.velocidade = 0;
+    console.log(`Carro ${this.marca} ${this.modelo} desligado.`);
+  }
+
+  acelerar(velocidade) {
+    if (this.ligado) {
+      this.velocidade += velocidade;
+      console.log(`Carro acelerando para ${this.velocidade} km/h.`);
+    } else {
+      console.log(`O carro precisa estar ligado para acelerar.`);
+    }
+  }
+}
+
+// Exemplo de uso
+
+const carro1 = new Carro("Toyota", "Corolla", "Prata");
+carro1.ligar();
+carro1.acelerar(60);
+carro1.desligar();
+
+#####
+
+Objetos Abstratos: Amizade e Felicidade
+
+Amizade:
+
+Atributos:
+amigos: Lista de amigos.
+nivelDeConfianca: Nível de confiança na amizade.
+atividadesEmComum: Atividades que os amigos gostam de fazer juntos.
+
+Métodos:
+adicionarAmigo(amigo): Adiciona um amigo à lista.
+aumentarConfianca(): Aumenta o nível de confiança.
+realizarAtividadeEmConjunto(atividade): Realiza uma atividade em conjunto.
+
+class Amizade {
+  constructor() {
+    this.amigos = [];
+    this.nivelDeConfianca = 50; // Nível inicial
+    this.atividadesEmComum = [];
+  }
+
+  adicionarAmigo(amigo) {
+    this.amigos.push(amigo);
+    console.log(`${amigo} adicionado à lista de amigos.`);
+  }
+
+  aumentarConfianca() {
+    this.nivelDeConfianca += 10;
+    console.log(`Nível de confiança aumentado para ${this.nivelDeConfianca}.`);
+  }
+
+  realizarAtividadeEmConjunto(atividade) {
+    this.atividadesEmComum.push(atividade);
+    console.log(`Atividade "${atividade}" realizada em conjunto.`);
+  }
+}
+
+// Exemplo de uso
+
+const amizade1 = new Amizade();
+amizade1.adicionarAmigo("João");
+amizade1.aumentarConfianca();
+amizade1.realizarAtividadeEmConjunto("Assistir a um filme");
+
+Felicidade:
+
+Atributos:
+nivel: Nível de felicidade.
+motivos: Lista de motivos que contribuem para a felicidade.
+objetivo: Objetivo que traz felicidade.
+
+Métodos:
+aumentarNivel(valor): Aumenta o nível de felicidade.
+adicionarMotivo(motivo): Adiciona um motivo à lista.
+definirObjetivo(objetivo): Define o objetivo que traz felicidade.
+
+class Felicidade {
+  constructor() {
+    this.nivel = 50; // Nível inicial
+    this.motivos = [];
+    this.objetivo = "Viver o momento";
+  }
+
+  aumentarNivel(valor) {
+    this.nivel += valor;
+    console.log(`Nível de felicidade aumentado para ${this.nivel}.`);
+  }
+
+  adicionarMotivo(motivo) {
+    this.motivos.push(motivo);
+    console.log(`Motivo "${motivo}" adicionado à lista.`);
+  }
+
+  definirObjetivo(objetivo) {
+    this.objetivo = objetivo;
+    console.log(`Objetivo de felicidade definido para "${objetivo}".`);
+  }
+}
+
+// Exemplo de uso
+
+const felicidade1 = new Felicidade();
+felicidade1.aumentarNivel(20);
+felicidade1.adicionarMotivo("Aniversário");
+felicidade1.definirObjetivo("Viajar");
